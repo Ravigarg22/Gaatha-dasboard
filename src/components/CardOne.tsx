@@ -31,6 +31,11 @@ const CardOne = () => {
             Unlimited Audios
           </li>
         </ul>
+
+
+        <button className="flex center justify-end rounded bg-primary p-1 font-small text-gray">
+                  Edit Plan
+                </button>
       </div>
     </div>
   );
