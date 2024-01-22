@@ -2,6 +2,10 @@ import { Suspense, lazy, useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 
+import { PersistGate } from 'redux-persist/es/integration/react';
+import { Provider, useDispatch } from 'react-redux';
+import { store } from './store';
+
 import SignIn from './pages/Authentication/SignIn';
 import Loader from './common/Loader';
 import routes from './routes';
@@ -18,7 +22,7 @@ function App() {
   return loading ? (
     <Loader />
   ) : (
-    <>
+    <Provider store={store}>
       <Toaster
         position="top-right"
         reverseOrder={false}
@@ -43,7 +47,7 @@ function App() {
           })}
         </Route>
       </Routes>
-    </>
+    </Provider>
   );
 }
 

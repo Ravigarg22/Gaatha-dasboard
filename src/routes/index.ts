@@ -1,12 +1,14 @@
 import { lazy } from 'react';
 
-const Chart = lazy(() => import('../pages/Chart'));
+const Chart = lazy(() => import('../pages/Dashboard'));
 const FormElements = lazy(() => import('../pages/Form/FormElements'));
 const FormLayout = lazy(() => import('../pages/Form/FormLayout'));
 const Profile = lazy(() => import('../pages/Profile'));
-const Settings = lazy(() => import('../pages/Settings'));
 const Tables = lazy(() => import('../pages/Tables'));
 const PlansList = lazy(() => import('../pages/Subscriptions/List/PlansList'));
+const TransactionHistory = lazy(
+  () => import('../pages/Transactions/TransactionHistory'),
+);
 
 const coreRoutes = [
   // Dashboard
@@ -37,7 +39,7 @@ const coreRoutes = [
   {
     path: '/transactions',
     title: 'Transactions',
-    component: Chart,
+    component: TransactionHistory,
   },
 
   //Profile
@@ -60,11 +62,6 @@ const coreRoutes = [
     path: '/tables',
     title: 'Tables',
     component: Tables,
-  },
-  {
-    path: '/settings',
-    title: 'Settings',
-    component: Settings,
   },
 ];
 
