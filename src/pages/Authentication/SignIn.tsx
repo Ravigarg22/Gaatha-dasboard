@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import LogoDark from '../../images/logo/logo-dark.jpeg';
-import Logo from '../../images/logo/logo-dark.jpeg';
+import LogoDark from '../../images/logo/logo-dark.png';
+import Logo from '../../images/logo/logo-dark.png';
 
 const SignIn = () => {
   return (
