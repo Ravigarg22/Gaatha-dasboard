@@ -22,13 +22,13 @@ const CardOne = () => {
             Unlimited Audios
           </li>
           <li className="text-xs text-black dark:text-white mx-5 p-1">
-            Unlimited Audios
+            Unlimited Audios Downloads
           </li>
           <li className="text-xs text-black dark:text-white mx-5 p-1">
-            Unlimited Audios
+            Make your Play List
           </li>
           <li className="text-xs text-black dark:text-white mx-5 p-1">
-            Unlimited Audios
+            All Features Include
           </li>
         </ul>
 

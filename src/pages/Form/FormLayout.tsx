@@ -19,22 +19,22 @@ const FormLayout = () => {
                 <div className="mb-4.5 flex flex-col gap-6 xl:flex-row">
                   <div className="w-full xl:w-1/2">
                     <label className="mb-2.5 block text-black dark:text-white">
-                      First name
+                    Monthly Plan
                     </label>
                     <input
                       type="text"
-                      placeholder="Enter your first name"
+                      placeholder="Monthly Plan"
                       className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                     />
                   </div>
 
                   <div className="w-full xl:w-1/2">
                     <label className="mb-2.5 block text-black dark:text-white">
-                      Last name
+                      No. of Days
                     </label>
                     <input
                       type="text"
-                      placeholder="Enter your last name"
+                      placeholder="Enter your no. of days"
                       className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                     />
                   </div>
@@ -42,25 +42,26 @@ const FormLayout = () => {
 
                 <div className="mb-4.5">
                   <label className="mb-2.5 block text-black dark:text-white">
-                    Email <span className="text-meta-1">*</span>
+                  Price <span className="text-meta-1">*</span>
                   </label>
                   <input
                     type="email"
-                    placeholder="Enter your email address"
+                    placeholder="Enter your Plan Price"
                     className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                   />
                 </div>
 
                 <div className="mb-4.5">
                   <label className="mb-2.5 block text-black dark:text-white">
-                    Subject
+                    Features
                   </label>
                   <div className="relative z-20 bg-transparent dark:bg-form-input">
                     <select className="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent py-3 px-5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
                       <option value="">Type your subject</option>
-                      <option value="">USA</option>
-                      <option value="">UK</option>
-                      <option value="">Canada</option>
+                      <option value="">Unlimited Audios</option>
+                      <option value="">Unlimited Audios Downloads</option>
+                      <option value="">Make your Play List</option>
+                      <option value="">All Features Include</option>
                     </select>
                     <span className="absolute top-1/2 right-4 z-30 -translate-y-1/2">
                       <svg
@@ -96,7 +97,7 @@ const FormLayout = () => {
                 </div>
 
                 <button className="flex center justify-center rounded bg-primary p-3 font-medium text-gray">
-                  Send Message
+                  Add Plan
                 </button>
               </div>
             </form>
