@@ -57,7 +57,7 @@ const coreRoutes = [
   {
     path: '/Forms/Edit-Subscription',
     title: 'Edit Plan',
-    component: Chart,
+    component: Form/Edit-subscription,
   },
   {
     path: '/tables',
