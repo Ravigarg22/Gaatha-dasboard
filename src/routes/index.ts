@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 
 const Chart = lazy(() => import('../pages/Dashboard'));
+const Changepassword = lazy(() => import('../pages/Authentication/Changepassword'))
 const FormElements = lazy(() => import('../pages/Form/FormElements'));
 const FormLayout = lazy(() => import('../pages/Form/FormLayout'));
 const Editsubscription = lazy(() => import('../pages/Form/Editsubscription'));

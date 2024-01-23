@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { CKEditor } from 'ckeditor4-react';
+import FormLayout from '../pages/Form/FormLayout';
+
 
 const { useState } = React;
 
@@ -88,3 +90,6 @@ const Event = ( { data: { name, timestamp } } ) => {
 }
 
 ReactDOM.render( <ConfigEvents />, document.getElementById( 'app' ) );
+
+
+export default FormLayout

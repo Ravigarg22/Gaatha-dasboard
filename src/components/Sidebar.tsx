@@ -5,7 +5,6 @@ import SidebarLinkGroup from './SidebarLinkGroup';
 import Dashboard from '../images/menu/dashboard.svg';
 import Plan from '../images/menu/plans.svg';
 import Transactions from '../images/menu/transactions.svg';
-import Settings from '../images/menu/settings.svg';
 import Logout from '../images/menu/logout.svg';
 
 interface SidebarProps {
