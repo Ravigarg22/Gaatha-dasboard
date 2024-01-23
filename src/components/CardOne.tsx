@@ -1,3 +1,5 @@
+import {NavLink} from 'react-router-dom';
+
 const CardOne = () => {
   return (
     <div className="rounded-sm border border-stroke bg-white m-3 p-5 shadow-default dark:border-strokedark dark:bg-boxdark">
@@ -32,8 +34,8 @@ const CardOne = () => {
           </li>
         </ul>
 
-
-        <button className="flex center justify-end rounded bg-primary p-1 font-small text-gray">
+        
+        <button className="flex w-full center justify-center mt-10 rounded bg-primary p-1 font-small text-gray">
                   Edit Plan
                 </button>
       </div>

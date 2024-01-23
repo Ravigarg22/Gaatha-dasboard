@@ -3,7 +3,7 @@ import { lazy } from 'react';
 const Chart = lazy(() => import('../pages/Dashboard'));
 const FormElements = lazy(() => import('../pages/Form/FormElements'));
 const FormLayout = lazy(() => import('../pages/Form/FormLayout'));
-const Edit-subscription = lazy(() => import('../pages/Form/Edit-subscription'));
+const Editsubscription = lazy(() => import('../pages/Form/Editsubscription'));
 const Profile = lazy(() => import('../pages/Profile'));
 const Tables = lazy(() => import('../pages/Tables'));
 const PlansList = lazy(() => import('../pages/Subscriptions/List/PlansList'));
@@ -57,7 +57,7 @@ const coreRoutes = [
   {
     path: '/Forms/Edit-Subscription',
     title: 'Edit Plan',
-    component: Form/Edit-subscription,
+    component: Editsubscription,
   },
   {
     path: '/tables',
