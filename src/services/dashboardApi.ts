@@ -1,5 +1,5 @@
 import axios from 'axios';
-import globals from '../contants/globals';
+import globals from '../constants/globals';
 
 const API = axios.create({
   baseURL: globals.DASHBOARD_API_URL,

@@ -23,18 +23,43 @@ function DataTable() {
   const columns = React.useMemo<ColumnDef<Person>[]>(
     () => [
       {
-        accessorKey: 'firstName',
-        cell: (info) => info.getValue(),
+        accessorKey: 'uid',
+        header: 'ID',
         footer: (props) => props.column.id,
       },
       {
-        accessorKey: 'age',
-        header: () => 'Age',
+        accessorKey: 'date',
+        header: 'Txn Date',
         footer: (props) => props.column.id,
       },
       {
-        accessorKey: 'visits',
-        header: () => <span>Visits</span>,
+        accessorKey: 'txnId',
+        header: 'Txn ID',
+        footer: (props) => props.column.id,
+      },
+      {
+        accessorKey: 'username',
+        header: 'Username',
+        footer: (props) => props.column.id,
+      },
+      // {
+      //   accessorKey: 'email',
+      //   header: 'Email',
+      //   footer: (props) => props.column.id,
+      // },
+      {
+        accessorKey: 'planName',
+        header: 'Plan Name',
+        footer: (props) => props.column.id,
+      },
+      {
+        accessorKey: 'planAmount',
+        header: 'Plan Amount',
+        footer: (props) => props.column.id,
+      },
+      {
+        accessorKey: 'planMode',
+        header: 'Payment Mode',
         footer: (props) => props.column.id,
       },
       {
@@ -42,17 +67,12 @@ function DataTable() {
         header: 'Status',
         footer: (props) => props.column.id,
       },
-      {
-        accessorKey: 'progress',
-        header: 'Profile Progress',
-        footer: (props) => props.column.id,
-      },
     ],
     [],
   );
 
-  const [data, setData] = React.useState(() => makeData(100000));
-  const refreshData = () => setData(() => makeData(100000));
+  const [data, setData] = React.useState(() => makeData(20));
+  const refreshData = () => setData(() => makeData(20));
 
   const table = useReactTable({
     data,
@@ -71,24 +91,25 @@ function DataTable() {
 
   return (
     <div className="w-full rounded-sm border border-stroke bg-white m-3 p-5 shadow-default dark:border-strokedark dark:bg-boxdark">
-      {/* <div>
+      <div className=" flex-row flex justify-between">
+        <h4 className="text-title-sm dark:text-white">Transaction History</h4>
         <input
           value={globalFilter ?? ''}
           onChange={(e) => setGlobalFilter(e.target.value)}
-          className="p-2 font-lg shadow border border-block"
-          placeholder="Search all columns..."
+          className="p-2 font-lg shadow border border-block border-gray-100 dark:border-black-100  px-10 dark:bg-black"
+          placeholder="Search here..."
         />
-      </div> */}
+      </div>
       <div className="h-2 " />
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-7">
-        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 dark:bg-boxdark">
+      <div className="relative overflow-x-auto shadow-md sm:rounded-lg py-7">
+        <table className="w-full text-sm  divide-y divide-gray-200 dark:divide-gray-700 ">
           <thead
             className="
             text-xs
             text-gray-700
             uppercase
             bg-gray-50
-            dark:bg-boxdark
+            dark:bg-black
             dark:text-gray-400"
           >
             {table.getHeaderGroups().map((headerGroup) => (
@@ -99,7 +120,7 @@ function DataTable() {
                       key={header.id}
                       colSpan={header.colSpan}
                       scope="col"
-                      className="px-6 py-3 text-sm"
+                      className="px-6 py-7 text-start text-xs font-medium text-gray-500 uppercase"
                     >
                       {header.isPlaceholder ? null : (
                         <>
@@ -107,11 +128,11 @@ function DataTable() {
                             header.column.columnDef.header,
                             header.getContext(),
                           )}
-                          {header.column.getCanFilter() ? (
+                          {/* {header.column.getCanFilter() ? (
                             <div>
                               <Filter column={header.column} table={table} />
                             </div>
-                          ) : null}
+                          ) : null} */}
                         </>
                       )}
                     </th>
@@ -125,7 +146,7 @@ function DataTable() {
               return (
                 <tr
                   key={row.id}
-                  className={`bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 dark:bg-boxdark border-opacity-25`}
+                  className="odd:bg-black-light even:bg-gray-light dark:odd:bg-slate-900 dark:even:bg-slate-800"
                 >
                   {row.getVisibleCells().map((cell) => {
                     return (
@@ -231,7 +252,7 @@ function Filter({
           column.setFilterValue((old: any) => [e.target.value, old?.[1]])
         }
         placeholder={`Min`}
-        className="w-full border shadow rounded p-1"
+        className="w-full border shadow rounded p-1 dark:bg-boxdark"
       />
       {/* <input
         type="number"
@@ -249,30 +270,7 @@ function Filter({
       value={(column.getFilterValue() ?? '') as string}
       onChange={(e) => column.setFilterValue(e.target.value)}
       placeholder={`Search...`}
-      className="w-full border shadow rounded p-1"
-    />
-  );
-}
-
-function IndeterminateCheckbox({
-  indeterminate,
-  className = '',
-  ...rest
-}: { indeterminate?: boolean } & HTMLProps<HTMLInputElement>) {
-  const ref = React.useRef<HTMLInputElement>(null!);
-
-  React.useEffect(() => {
-    if (typeof indeterminate === 'boolean') {
-      ref.current.indeterminate = !rest.checked && indeterminate;
-    }
-  }, [ref, indeterminate]);
-
-  return (
-    <input
-      type="checkbox"
-      ref={ref}
-      className={className + ' cursor-pointer'}
-      {...rest}
+      className="w-full border shadow rounded p-1 dark:bg-boxdark"
     />
   );
 }
