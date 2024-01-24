@@ -1,4 +1,4 @@
-import {NavLink} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 
 const CardOne = () => {
   return (
@@ -34,10 +34,11 @@ const CardOne = () => {
           </li>
         </ul>
 
-        
+        <Link to="/editsubscription">
         <button className="flex w-full center justify-center mt-10 rounded bg-primary p-1 font-small text-gray">
                   Edit Plan
                 </button>
+                </Link>
       </div>
     </div>
   );

@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { CKEditor } from 'ckeditor4-react';
-import FormLayout from '../pages/Form/FormLayout';
-
 
 const { useState } = React;
 
@@ -26,13 +24,6 @@ const ConfigEvents = () => {
 
 	return (
 		<div>
-			<h2>WYSIWYG editor with custom event handlers and configuration</h2>
-			<p>
-				Editors created with the CKEditior 4 React component are highly customizable. It is possible to overwrite every configuration setting using the <code>config</code> property and passing an object containing the configuration to it.
-			</p>
-			<p>
-				Additionally, the CKEditor 4 WYSIWYG editor component for React allows you to bind any event handler using properties with names starting with <code>on</code>, followed by the name of the event with the first letter capitalized. The following example shows how to bind several common CKEditor 4 events and apply custom toolbar configuration.
-			</p>
 			<CKEditor
 				initData="This is a CKEditor 4 WYSIWYG editor instance created by ️⚛️ React."
 				config={{
@@ -57,7 +48,7 @@ const ConfigEvents = () => {
 			/>
 			<h3>Events Log</h3>
 			<small>To check additional details about every event, consult the console in the browser developer tools.</small>
-			<EventLog stream={events} />
+			{/* <EventLog stream={events} /> */}
 			<button onClick={clearEvents}>Clear events log</button>
 		</div>
 	);
@@ -89,7 +80,4 @@ const Event = ( { data: { name, timestamp } } ) => {
 	);
 }
 
-ReactDOM.render( <ConfigEvents />, document.getElementById( 'app' ) );
-
-
-export default FormLayout
+export default ConfigEvents

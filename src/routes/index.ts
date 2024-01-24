@@ -1,11 +1,11 @@
 import { lazy } from 'react';
 
 const Chart = lazy(() => import('../pages/Dashboard'));
-const Changepassword = lazy(() => import('../pages/Authentication/Changepassword'))
 const FormElements = lazy(() => import('../pages/Form/FormElements'));
 const FormLayout = lazy(() => import('../pages/Form/FormLayout'));
 const Editsubscription = lazy(() => import('../pages/Form/Editsubscription'));
 const Profile = lazy(() => import('../pages/Profile'));
+const Changepassword = lazy(() => import('../pages/Authentication/Changepassword'));
 const Tables = lazy(() => import('../pages/Tables'));
 const PlansList = lazy(() => import('../pages/Subscriptions/List/PlansList'));
 const TransactionHistory = lazy(
@@ -46,6 +46,11 @@ const coreRoutes = [
     component: Profile,
   },
   {
+    path: '/Changepassword',
+    title: 'Changepassword',
+    component: Changepassword,
+  },
+  {
     path: '/forms/form-elements',
     title: 'Forms Elements',
     component: FormElements,
@@ -56,7 +61,7 @@ const coreRoutes = [
     component: FormLayout,
   },
   {
-    path: '/Forms/Edit-Subscription',
+    path: '/editsubscription',
     title: 'Edit Plan',
     component: Editsubscription,
   },

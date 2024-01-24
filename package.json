@@ -21,6 +21,7 @@
     "@types/redux-thunk": "^2.1.0",
     "apexcharts": "^3.41.0",
     "axios": "^1.6.5",
+    "ckeditor4-react": "^5.0.0",
     "headlessui": "^0.0.0",
     "jsvectormap": "^1.5.3",
     "match-sorter": "^6.3.1",

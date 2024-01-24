@@ -1,5 +1,6 @@
 import Breadcrumb from '../../components/Breadcrumb';
 import { NavLink } from 'react-router-dom';
+import ConfigEvents from '../../components/Features';
 
 const FormLayout = () => {
   return (
@@ -130,12 +131,7 @@ const FormLayout = () => {
                   <label className="mb-2.5 block text-black dark:text-white">
                     Features
                   </label>
-                  <input
-                    type="email"
-                    placeholder="Enter your Plan Price"
-                    className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                  />
-                  <NavLink to="Features"></NavLink>
+                  <ConfigEvents/>
                 </div>
 
                 <button className="flex center justify-center rounded bg-primary p-3 font-medium text-gray">
