@@ -1,8 +1,13 @@
 import Breadcrumb from '../../components/Breadcrumb';
 import { NavLink } from 'react-router-dom';
-import ConfigEvents from '../../components/Features';
+import JoditEditor from 'jodit-react';
+import { useRef, useState } from 'react';
 
 const FormLayout = () => {
+
+  const editor=useRef(null)
+  const [content,setContent] =useState( '' )
+
   return (
     <>
       <Breadcrumb pageName="Add Subscription" />
@@ -131,7 +136,11 @@ const FormLayout = () => {
                   <label className="mb-2.5 block text-black dark:text-white">
                     Features
                   </label>
-                  <ConfigEvents/>
+                  <JoditEditor
+                  ref={editor}
+                  value={content}
+                  onChange={newContent=>setContent(newContent)}
+                  />
                 </div>
 
                 <button className="flex center justify-center rounded bg-primary p-3 font-medium text-gray">
